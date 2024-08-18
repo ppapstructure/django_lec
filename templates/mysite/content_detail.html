@@ -1,6 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 <h2>{{ content_list.title }}</h2>
+
+<!-- 이미지 출력 -->
+{% if content_list.image %}
+    <div>
+        <img src="{{ content_list.image.url }}" alt="{{ content_list.title }}" style="max-width: 100%; height: auto;">
+    </div>
+{% endif %}
+
 <div>
     {{ content_list.content }}
 </div>
